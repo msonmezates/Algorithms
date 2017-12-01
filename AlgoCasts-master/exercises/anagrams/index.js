@@ -9,23 +9,11 @@
 //   anagrams('Hi there', 'Bye there') --> False
 
 function anagrams(stringA, stringB) {
-  const myObjA = myMapObj(stringA);
-  const myObjB = myMapObj(stringB);
-
-  if(Object.keys(myObjA).length !== Object.keys(myObjB).length) return false;
-
-  for(let char in myObjA) {
-    if(myObjA[char] !== myObjB[char]) return false;
-  }
-  return true;
+  return sortedString(stringA) === sortedString(stringB);
 }
 
-function myMapObj(string) {
-  let myObj = {};
-  for(let char of string.replace(/[^\w]/g, "").toLowerCase()) {
-    myObj[char] = myObj[char] + 1 || 1;
-  }
-  return myObj
+function sortedString(str) {
+  return str.replace(/[^\w]/g, "").toLowerCase().split("").sort().join();
 }
 
 module.exports = anagrams;
@@ -56,4 +44,28 @@ module.exports = anagrams;
 //       return true;
 //     }
 //   }
+// }
+
+
+
+// ------------------------------
+// Alternate solution
+// function anagrams(stringA, stringB) {
+//   const myObjA = myMapObj(stringA);
+//   const myObjB = myMapObj(stringB);
+//
+//   if(Object.keys(myObjA).length !== Object.keys(myObjB).length) return false;
+//
+//   for(let char in myObjA) {
+//     if(myObjA[char] !== myObjB[char]) return false;
+//   }
+//   return true;
+// }
+//
+// function myMapObj(string) {
+//   let myObj = {};
+//   for(let char of string.replace(/[^\w]/g, "").toLowerCase()) {
+//     myObj[char] = myObj[char] + 1 || 1;
+//   }
+//   return myObj
 // }
