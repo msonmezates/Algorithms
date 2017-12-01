@@ -9,12 +9,22 @@
 
 function capitalize(str) {
   let resultArr = [];
-  for(let el of str.split(" ")) {
-    let char = el[0].toUpperCase();
-    let newEl = el.replace(el[0], char);
-    resultArr.push(newEl)
+  for(let word of str.split(" ")) {
+    resultArr.push(word[0].toUpperCase() + word.slice(1))
   }
   return resultArr.join(" ");
 }
 
 module.exports = capitalize;
+
+// ------------------------
+// Alternate solution
+// function capitalize(str) {
+//   let resultArr = [];
+//   for(let el of str.split(" ")) {
+//     let char = el[0].toUpperCase();
+//     let newEl = el.replace(el[0], char);
+//     resultArr.push(newEl)
+//   }
+//   return resultArr.join(" ");
+// }
