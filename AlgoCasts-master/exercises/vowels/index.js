@@ -10,7 +10,7 @@
 function vowels(str) {
   str = str.toLowerCase();
   let sum = 0;
-  const vowel = 'aeiou';
+  const vowel = ['a','e','i','o','u'];
   for(let char of str) {
     if(vowel.includes(char)) {
       sum++;
