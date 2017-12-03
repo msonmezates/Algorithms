@@ -12,7 +12,7 @@ function vowels(str) {
   let sum = 0;
   const vowel = 'aeiou';
   for(let char of str) {
-    if(vowel.indexOf(char) >= 0) {
+    if(vowel.includes(char)) {
       sum++;
     }
   }
@@ -20,3 +20,17 @@ function vowels(str) {
 }
 
 module.exports = vowels;
+
+// ---------------------
+// Alternate solution
+// function vowels(str) {
+//   str = str.toLowerCase();
+//   let sum = 0;
+//   const vowel = 'aeiou';
+//   for(let char of str) {
+//     if(vowel.indexOf(char) >= 0) {
+//       sum++;
+//     }
+//   }
+//   return sum;
+// }
