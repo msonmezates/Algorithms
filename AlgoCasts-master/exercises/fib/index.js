@@ -9,12 +9,19 @@
 //   fib(4) === 3
 
 function fib(n) {
-  const result = [0,1];
-  for(i=2; i<=n; i++) {
-    const num = result[i-1] + result[i-2];
-    result.push(num);
-  }
-  return result[n];
+ if(n<2) return n;
+ return fib(n-1) + fib(n-2);
 }
 
 module.exports = fib;
+
+// ----------------------
+// Alternate solution
+// function fib(n) {
+//   const result = [0,1];
+//   for(i=2; i<=n; i++) {
+//     const num = result[i-1] + result[i-2];
+//     result.push(num);
+//   }
+//   return result[n];
+// }
