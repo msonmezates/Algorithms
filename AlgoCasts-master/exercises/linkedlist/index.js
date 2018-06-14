@@ -52,6 +52,21 @@ class LinkedList {
     // this.head = node.next;
     this.head = this.head.next;
   }
+
+  removeLast() {
+    if(!this.head) return;
+    else if(!this.head.next) {
+      this.head = null;
+      return;
+    }
+    let previous = this.head;
+    let node = previous.next;
+    while(node.next) {
+      previous = node;
+      node = node.next;
+    }
+    previous.next = null;
+  }
 }
 
 module.exports = { Node, LinkedList };
