@@ -1,1 +1,1 @@
-# Algorithms-Stephen-Grider
+# Javascript Algorithm Exercises
