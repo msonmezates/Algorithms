@@ -13,11 +13,11 @@ class LinkedList {
   constructor() {
     this.head = null;
   }
-
+  // add a new node to the head
   insertFirst(data) {
     this.head = new Node(data, this.head);
   }
-
+  // return the length of linked list
   size() {
     let counter = 0;
     let node = this.head;
@@ -27,11 +27,11 @@ class LinkedList {
     }
     return counter;
   }
-
+  // return the head node
   getFirst() {
     return this.head;
   }
-
+  // return the tail
   getLast() {
     if(!this.head) return null;
 
@@ -41,18 +41,18 @@ class LinkedList {
       node = node.next;
     }
   }
-
+  // empty the linked list
   clear() {
     this.head = null;
   }
-
+  // remove the first node(head)
   removeFirst() {
     if(!this.head) return null;
     // let node = this.head;
     // this.head = node.next;
     this.head = this.head.next;
   }
-
+  // remove the last node(tail)
   removeLast() {
     if(!this.head) return;
     else if(!this.head.next) {
@@ -67,7 +67,7 @@ class LinkedList {
     }
     previous.next = null;
   }
-
+  // add it to the tail
   insertLast(data) {
     const last = this.getLast();
     if(last) {
@@ -76,7 +76,7 @@ class LinkedList {
       this.head = new Node(data);
     }
   }
-
+  find the node at a given index
   getAt(index) {
     let node = this.head;
     let counter = 0;
@@ -87,7 +87,7 @@ class LinkedList {
     }
     return null;
   }
-
+  // remove the node at a given index
   removeAt(index) {
     if(!this.head) return;
     if(index === 0) {
@@ -98,7 +98,7 @@ class LinkedList {
     if(!previous || !previous.next) return;
     previous.next = previous.next.next;
   }
-
+  // insert a new node at a given index
   insertAt(data, index) {
     if(!this.head || index === 0) {
       this.head = new Node(data, this.head);
@@ -108,7 +108,7 @@ class LinkedList {
     const node = new Node(data, previous.next);
     previous.next = node;
   }
-
+  // loop through the linked list
   forEach(fn) {
     let node = this.head;
     let counter = 0;
